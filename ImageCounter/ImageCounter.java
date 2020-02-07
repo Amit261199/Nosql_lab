@@ -26,6 +26,8 @@ public class ImageCounter{
 			
 			String request=val.toString();
 			String url= request.split(" ")[6];
+			String method= request.split(" ")[5];
+			System.out.println(method);
 			int i=url.lastIndexOf(".");
 			
 			if(i!=-1)
@@ -37,7 +39,7 @@ public class ImageCounter{
 			//System.out.println(extension);
 			
 			
-			if(isImg.contains(extension))
+			if(isImg.contains(extension)&&method.equals("\"GET"))
 			{
 				if(extension.equals("gif"))
 				{
